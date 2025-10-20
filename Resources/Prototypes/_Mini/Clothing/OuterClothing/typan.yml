@@ -10,21 +10,6 @@
     sprite: _Mini/Clothing/OuterClothing/apron_chef.rsi
 
 - type: entity
-  parent: ClothingOuterStorageFoldableBase
-  id: ClothingOuterMedTypan
-  name: халат медика синдиката
-  description: Халат с едва заметными неотстиранными пятнами крови. Пахнет пытками.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/labcoat_robo.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/labcoat_robo.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Caustic: 0.75
-
-- type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterTypanChef
   name: куртка шеф-повара синдиката

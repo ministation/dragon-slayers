@@ -11,11 +11,7 @@
   cost: 7500
   recipeUnlocks:
   - ProximitySensor
-   # Goobstation R&D Console rework start
-  position: 0,1
-  # technologyPrerequisites:
-  # - SpaceScanning
-  # Goobstation R&D Console rework end
+  position: 0,0
 
 - type: technology
   id: TypanBasicAnomalousResearch
@@ -32,11 +28,7 @@
   - AnomalyLocatorWide
   - APECircuitboard
   - AnomalyVesselCircuitboardTypan
-   # Goobstation R&D Console rework start
-  position: 0,2
-  # technologyPrerequisites:
-  # - SpaceScanning
-  # Goobstation R&D Console rework end
+  position: 1,0
 
 - type: technology
   id: TypanBasicXenoArcheology
@@ -51,11 +43,7 @@
   - NodeScanner
   - AnalysisComputerCircuitboardTypan
   - ArtifactAnalyzerMachineCircuitboard
-   # Goobstation R&D Console rework start
-  position: 0,3
-  # technologyPrerequisites:
-  # - SpaceScanning
-  # Goobstation R&D Console rework end
+  position: 2,0
 
 - type: technology
   id: TypanMagnetsTech
@@ -69,11 +57,7 @@
   recipeUnlocks:
   - ClothingShoesBootsMagSyndie
   - ClothingShoesBootsMoon
-   # Goobstation R&D Console rework start
-  position: 0,4
-  # technologyPrerequisites:
-  # - SpaceScanning
-  # Goobstation R&D Console rework end
+  position: 3,0
 
 - type: technology
   id: TypanEnergyDaggers
@@ -86,30 +70,9 @@
   cost: 7500
   recipeUnlocks:
   - EnergyDagger
-   # Goobstation R&D Console rework start
-  position: 0,5
-  # technologyPrerequisites:
-  # - SpaceScanning
-  # Goobstation R&D Console rework end
+  position: 4,0
 
 # Tier 2
-
-- type: technology
-  id: TypanAbnormalArtifactManipulation
-  name: research-technology-abnormal-artifact-manipulation
-  icon:
-    sprite: Structures/Machines/artifact_crusher.rsi
-    state: icon
-  discipline: TypanResearch
-  tier: 2
-  cost: 15000
-  recipeUnlocks:
-  - ArtifactCrusherMachineCircuitboard
-   # Goobstation R&D Console rework start
-  position: 0,6
-  # technologyPrerequisites:
-  # - SpaceScanning
-  # Goobstation R&D Console rework end
 
 - type: technology
   id: TypanAdvancedAnomalyResearch
@@ -126,11 +89,24 @@
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboardTypan
   - WeaponGauntletGorilla
-   # Goobstation R&D Console rework start
-  position: 0,-3
+  position: 0,1
   technologyPrerequisites:
   - TypanBasicAnomalousResearch
-  # Goobstation R&D Console rework end
+
+- type: technology
+  id: TypanAbnormalArtifactManipulation
+  name: research-technology-abnormal-artifact-manipulation
+  icon:
+    sprite: Structures/Machines/artifact_crusher.rsi
+    state: icon
+  discipline: TypanResearch
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - ArtifactCrusherMachineCircuitboard
+  position: 1,1
+  technologyPrerequisites:
+  - TypanBasicXenoArcheology
 
 - type: technology
   id: TypanDeterrenceTechnologies
@@ -144,28 +120,7 @@
   recipeUnlocks:
   - WeaponParticleDecelerator
   - HoloprojectorField
-   # Goobstation R&D Console rework start
-  position: 0,-4
-  # technologyPrerequisites:
-  # - SpaceScanning
-  # Goobstation R&D Console rework end
-
-- type: technology
-  id: TypanChameleonProjector
-  name: research-technology-chameleon-projector
-  icon:
-    sprite: Objects/Devices/chameleon_projector.rsi
-    state: icon
-  discipline: TypanResearch
-  tier: 2
-  cost: 15000
-  recipeUnlocks:
-  - ChameleonProjector
-   # Goobstation R&D Console rework start
-  position: 0,-5
-  # technologyPrerequisites:
-  # - SpaceScanning
-  # Goobstation R&D Console rework end
+  position: 2,1
 
 - type: technology
   id: TypanEnergyWeapons
@@ -179,11 +134,22 @@
   recipeUnlocks:
   - EnergySword
   - EnergyShield
-   # Goobstation R&D Console rework start
-  position: 0,-6
+  position: 3,1
   technologyPrerequisites:
   - TypanEnergyDaggers
-  # Goobstation R&D Console rework end
+
+- type: technology
+  id: TypanChameleonProjector
+  name: research-technology-chameleon-projector
+  icon:
+    sprite: Objects/Devices/chameleon_projector.rsi
+    state: icon
+  discipline: TypanResearch
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - ChameleonProjector
+  position: 4,1
 
 # Tier 3
 
@@ -198,11 +164,7 @@
   cost: 30000
   recipeUnlocks:
   - EmagTypanLimited
-   # Goobstation R&D Console rework start
-  position: 0,-7
-  # technologyPrerequisites:
-  # - IndustrialEngineering
-  # Goobstation R&D Console rework end
+  position: 0,2
 
 - type: technology
   id: TypanAdvancedMagnetsTech
@@ -215,11 +177,9 @@
   cost: 30000
   recipeUnlocks:
   - ClothingShoesBootsMagAdvSynd
-   # Goobstation R&D Console rework start
-  position: 0,-8
+  position: 1,2
   technologyPrerequisites:
   - TypanMagnetsTech
-  # Goobstation R&D Console rework end
 
 - type: technology
   id: TypanEliteEnergyWeapons
@@ -232,8 +192,6 @@
   cost: 30000
   recipeUnlocks:
   - EnergySwordDouble
-   # Goobstation R&D Console rework start
-  position: 0,-9
+  position: 2,2
   technologyPrerequisites:
   - TypanEnergyWeapons
-  # Goobstation R&D Console rework end
