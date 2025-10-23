@@ -153,8 +153,7 @@
   icon: "JobIconChiefMedicalOfficer"
   supervisors: job-supervisors-captain
   canBeAntag: false
-  goobcoins: 40 #Goob content  #Corvax-Goob-coins
-  weight: 10 #Goob Edit
+  goobcoins: 40 #Goob content
   access:
   - Medical
   - Command

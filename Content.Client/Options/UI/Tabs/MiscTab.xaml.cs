@@ -78,7 +78,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-//using Content.Client._RMC14.LinkAccount; CorvaxGoob-Coins
+using Content.Client._RMC14.LinkAccount;
 using Content.Client.UserInterface.Screens;
 using Content.Shared.CCVar;
 using Content.Shared.HUD;
@@ -97,7 +97,7 @@ public sealed partial class MiscTab : Control
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    //[Dependency] private readonly LinkAccountManager _linkAccount = default!; CorvaxGoob-Coins
+    [Dependency] private readonly LinkAccountManager _linkAccount = default!;
 
     public MiscTab()
     {
@@ -120,8 +120,7 @@ public sealed partial class MiscTab : Control
 
         // Channel can be null in replays so.
         // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
-        //ShowOocPatronColor.Visible = _linkAccount.Tier != null;
-        ShowOocPatronColor.Visible = _playerManager.LocalSession?.Channel?.UserData.PatronTier is { }; // CorvaxGoob-Coins
+        ShowOocPatronColor.Visible = _linkAccount.Tier != null;
 
         Control.AddOptionDropDown(CVars.InterfaceTheme, DropDownHudTheme, themeEntries);
         Control.AddOptionDropDown(CCVars.UILayout, DropDownHudLayout, layoutEntries);

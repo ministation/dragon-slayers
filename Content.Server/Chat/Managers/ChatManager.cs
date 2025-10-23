@@ -198,8 +198,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-// using Content.Server._RMC14.LinkAccount; // RMC - Patreon // CorvaxGoob-Coins
-// using Content.Server._RMC14.LinkAccount; CorvaxGoob-Coins
+using Content.Server._RMC14.LinkAccount;
 using Content.Corvax.Interfaces.Shared; // RMC - Patreon
 
 namespace Content.Server.Chat.Managers;
@@ -229,7 +228,7 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
     private ISharedSponsorsManager? _sponsorsManager; // CorvaxGoob-Sponsors
     [Dependency] private readonly ISharedPlayerManager _player = default!;
-    //[Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon // CorvaxGoob-Coins
+    [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
 
     /// <summary>
     /// The maximum length a player-sent message can be sent
@@ -444,11 +443,9 @@ internal sealed partial class ChatManager : IChatManager
             colorOverride = prefs.AdminOOCColor;
         }
         if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
-              player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor)) // CorvaxGoob-Coins
-            //_linkAccount.GetPatron(player)?.Tier != null) // RMC - Patreon
+            _linkAccount.GetPatron(player)?.Tier != null) // RMC - Patreon
         {
-            //wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", "#aa00ff"),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message))); // RMC - Patreon // CorvaxGoob-Coins
-            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", "#aa00ff"),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message))); // RMC - Patreon
         }
 
         // CorvaxGoob-Sponsors-Start

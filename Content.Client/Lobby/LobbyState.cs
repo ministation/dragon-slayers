@@ -1,4 +1,6 @@
 using Content.Client._Mini.Latejoin;
+using Content.Client._durkcode.ServerCurrency;
+using Content.Client._RMC14.LinkAccount;
 using Content.Client.Audio;
 using Content.Client.GameTicking.Managers;
 using Content.Client.LateJoin;
@@ -30,10 +32,8 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
-        /* CorvaxGoob-Coins-start
         [Dependency] private readonly ServerCurrencySystem _serverCur = default!; // Goobstation - server currency
         [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
-        CorvaxGoob-Coins-end */
         [Dependency] private readonly IPrototypeManager _protoMan = default!; // Goobstation - credits
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
 
@@ -76,8 +76,8 @@ namespace Content.Client.Lobby
 
             UpdateLobbyUi();
 
-            // Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
-            //Lobby.CharacterPreview.PatronPerks.OnPressed += OnPatronPerksPressed; CorvaxGoob-Coins
+            Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
+            Lobby.CharacterPreview.PatronPerks.OnPressed += OnPatronPerksPressed;
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
 
@@ -85,7 +85,7 @@ namespace Content.Client.Lobby
             _gameTicker.LobbyStatusUpdated += LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated += LobbyLateJoinStatusUpdated;
 
-            // _serverCur.BalanceChange += UpdatePlayerBalance; // Goobstation - Goob Coin
+            _serverCur.BalanceChange += UpdatePlayerBalance; // Goobstation - Goob Coin
         }
 
         protected override void Shutdown()
@@ -95,13 +95,13 @@ namespace Content.Client.Lobby
             _gameTicker.InfoBlobUpdated -= UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated -= LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated -= LobbyLateJoinStatusUpdated;
-            //_contentAudioSystem.LobbySoundtrackChanged -= UpdateLobbySoundtrackInfo;
-            // _serverCur.BalanceChange -= UpdatePlayerBalance; // Goobstation - Goob Coin
+            _contentAudioSystem.LobbySoundtrackChanged -= UpdateLobbySoundtrackInfo;
+            _serverCur.BalanceChange -= UpdatePlayerBalance; // Goobstation - Goob Coin
 
             _voteManager.ClearPopupContainer();
 
-            //Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
-            //Lobby.CharacterPreview.PatronPerks.OnPressed -= OnPatronPerksPressed; CorvaxGoob-Coins
+            Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
+            Lobby.CharacterPreview.PatronPerks.OnPressed -= OnPatronPerksPressed;
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
 
@@ -112,6 +112,17 @@ namespace Content.Client.Lobby
         {
             // Yeah I hate this but LobbyState contains all the badness for now.
             Lobby?.SwitchState(state);
+        }
+
+        private void OnSetupPressed(BaseButton.ButtonEventArgs args)
+        {
+            SetReady(false);
+            Lobby?.SwitchState(LobbyGui.LobbyGuiState.CharacterSetup);
+        }
+
+        private void OnPatronPerksPressed(BaseButton.ButtonEventArgs obj)
+        {
+            _userInterfaceManager.GetUIController<LinkAccountUIController>().TogglePatronPerksWindow();
         }
 
         private void OnReadyPressed(BaseButton.ButtonEventArgs args)
@@ -184,7 +195,7 @@ namespace Content.Client.Lobby
 
         private void UpdateLobbyUi()
         {
-            //Lobby!.CharacterPreview.PatronPerks.Visible = _linkAccount.CanViewPatronPerks(); CorvaxGoob-Coins
+            Lobby!.CharacterPreview.PatronPerks.Visible = _linkAccount.CanViewPatronPerks();
 
             if (_gameTicker.IsGameStarted)
             {
@@ -207,60 +218,59 @@ namespace Content.Client.Lobby
             {
                 Lobby!.ServerInfo.SetInfoBlob(_gameTicker.ServerInfoBlob);
             }
+
+            UpdatePlayerBalance(); // Goobstation - Goob Coin
+
+            //     var minutesToday = _playtimeTracking.PlaytimeMinutesToday;
+            //     if (minutesToday > 60)
+            //     {
+            //         Lobby!.PlaytimeComment.Visible = true;
+
+            //         var hoursToday = Math.Round(minutesToday / 60f, 1);
+
+            //         var chosenString = minutesToday switch
+            //         {
+            //             < 180 => "lobby-state-playtime-comment-normal",
+            //             < 360 => "lobby-state-playtime-comment-concerning",
+            //             < 720 => "lobby-state-playtime-comment-grasstouchless",
+            //             _ => "lobby-state-playtime-comment-selfdestructive"
+            //         };
+
+            //         Lobby.PlaytimeComment.SetMarkup(Loc.GetString(chosenString, ("hours", hoursToday)));
+            //     }
+            //     else
+            //         Lobby!.PlaytimeComment.Visible = false;
+            // }
+
+            // private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)
+            // {
+            //     if (ev.SoundtrackFilename == null)
+            //     {
+            //         Lobby!.LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
+            //     }
+            //     else if (
+            //         ev.SoundtrackFilename != null
+            //         && _resourceCache.TryGetResource<AudioResource>(ev.SoundtrackFilename, out var lobbySongResource)
+            //         )
+            //     {
+            //         var lobbyStream = lobbySongResource.AudioStream;
+
+            //         var title = string.IsNullOrEmpty(lobbyStream.Title)
+            //             ? Loc.GetString("lobby-state-song-unknown-title")
+            //             : lobbyStream.Title;
+
+            //         var artist = string.IsNullOrEmpty(lobbyStream.Artist)
+            //             ? Loc.GetString("lobby-state-song-unknown-artist")
+            //             : lobbyStream.Artist;
+
+            //         var markup = Loc.GetString("lobby-state-song-text",
+            //             ("songTitle", title),
+            //             ("songArtist", artist));
+
+            //         Lobby!.LobbySong.SetMarkup(markup);
+            //     }
+            // }
         }
-
-            // UpdatePlayerBalance(); // Goobstation - Goob Coin
-
-        //     var minutesToday = _playtimeTracking.PlaytimeMinutesToday;
-        //     if (minutesToday > 60)
-        //     {
-        //         Lobby!.PlaytimeComment.Visible = true;
-
-        //         var hoursToday = Math.Round(minutesToday / 60f, 1);
-
-        //         var chosenString = minutesToday switch
-        //         {
-        //             < 180 => "lobby-state-playtime-comment-normal",
-        //             < 360 => "lobby-state-playtime-comment-concerning",
-        //             < 720 => "lobby-state-playtime-comment-grasstouchless",
-        //             _ => "lobby-state-playtime-comment-selfdestructive"
-        //         };
-
-        //         Lobby.PlaytimeComment.SetMarkup(Loc.GetString(chosenString, ("hours", hoursToday)));
-        //     }
-        //     else
-        //         Lobby!.PlaytimeComment.Visible = false;
-        // }
-
-        // private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)
-        // {
-        //     if (ev.SoundtrackFilename == null)
-        //     {
-        //         Lobby!.LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
-        //     }
-        //     else if (
-        //         ev.SoundtrackFilename != null
-        //         && _resourceCache.TryGetResource<AudioResource>(ev.SoundtrackFilename, out var lobbySongResource)
-        //         )
-        //     {
-        //         var lobbyStream = lobbySongResource.AudioStream;
-
-        //         var title = string.IsNullOrEmpty(lobbyStream.Title)
-        //             ? Loc.GetString("lobby-state-song-unknown-title")
-        //             : lobbyStream.Title;
-
-        //         var artist = string.IsNullOrEmpty(lobbyStream.Artist)
-        //             ? Loc.GetString("lobby-state-song-unknown-artist")
-        //             : lobbyStream.Artist;
-
-        //         var markup = Loc.GetString("lobby-state-song-text",
-        //             ("songTitle", title),
-        //             ("songArtist", artist));
-
-        //         Lobby!.LobbySong.SetMarkup(markup);
-        //     }
-        // }
-
 
         private void UpdateLobbyBackground()
         {
@@ -272,9 +282,7 @@ namespace Content.Client.Lobby
             {
                 Lobby!.Background.Texture = null;
             }
-
         }
-
 
         private void SetReady(bool newReady)
         {
@@ -286,9 +294,9 @@ namespace Content.Client.Lobby
             _consoleHost.ExecuteCommand($"toggleready {newReady}");
         }
 
-        //private void UpdatePlayerBalance() // Goobstation - Goob Coin
-        //{
-        //    Lobby!.Balance.Text = _serverCur.Stringify(_serverCur.GetBalance());
-        //}
+        private void UpdatePlayerBalance() // Goobstation - Goob Coin
+        {
+            Lobby!.Balance.Text = _serverCur.Stringify(_serverCur.GetBalance());
+        }
     }
 }

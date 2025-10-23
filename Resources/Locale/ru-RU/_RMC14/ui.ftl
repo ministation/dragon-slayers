@@ -11,7 +11,7 @@ rmc-ui-link-discord-account-copy = Копировать код
 rmc-ui-link-discord-account-copied = Скопировано!
 rmc-ui-link-discord-account-already-linked = [bold]Ваш аккаунт уже привязан![/bold]
 rmc-ui-link-discord-account-open-channel = Открыть канал
-rmc-ui-patron-perks = Привилегии Патрона
+rmc-ui-patron-perks = Привилегии
 rmc-ui-lobby-message = Сообщение в лобби
 rmc-ui-lobby-message-description =
     Отображается игрокам перед началом раунда.
