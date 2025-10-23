@@ -368,6 +368,16 @@
     - BSOManual
 
 - type: selectableSet
+  id: BSOSandevistanSet
+  name: Набор "Сандевистан"
+  description: Имплант, заменяющий сердце, позволяет ускорять тело носителя.
+  sprite:
+    sprite: _Goobstation/Objects/Misc/sandevistan.rsi
+    state: icon
+  content:
+    - OrganHeartSandevistanBSO
+
+- type: selectableSet
   id: BSOChesterSet
   name: selectable-set-blueshield-chester-name
   description: selectable-set-blueshield-chester-description

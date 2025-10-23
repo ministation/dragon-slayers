@@ -999,7 +999,7 @@
 
 - type: loadoutGroup
   id: BlueshieldOfficerBelt
-  name: loadout-group-bso-belt
+  name: Пояс офицера Синего Щита
   loadouts:
   - BeltAssault
   - MilitaryWebbingBlueShield
