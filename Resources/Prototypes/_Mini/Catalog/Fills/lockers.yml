@@ -113,7 +113,10 @@
   components:
   - type: StorageFill
     contents:
+    - id: ClothingShoesBootsMagSyndie
     - id: ClothingBeltUtilityEngineering
+    - id: Pickaxe
+    - id: OreBag
     - id: SurvivalKnife
     - id: HandheldGPSBasic
 #    - id: RadioHandheldTypan
