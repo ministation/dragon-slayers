@@ -32,9 +32,7 @@ namespace Content.Client.Lobby.UI
         public event Action? GhostRolesPressed;
 
         private int _prevNumberRoles;
-
         public GhostTargetWindow TargetWindow { get; } = null!;
-
         public LobbyGui()
         {
             RobustXamlLoader.Load(this);

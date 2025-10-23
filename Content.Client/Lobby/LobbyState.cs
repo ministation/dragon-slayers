@@ -95,7 +95,6 @@ namespace Content.Client.Lobby
             _gameTicker.InfoBlobUpdated -= UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated -= LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated -= LobbyLateJoinStatusUpdated;
-            _contentAudioSystem.LobbySoundtrackChanged -= UpdateLobbySoundtrackInfo;
             _serverCur.BalanceChange -= UpdatePlayerBalance; // Goobstation - Goob Coin
 
             _voteManager.ClearPopupContainer();

@@ -50,6 +50,10 @@
             <PanelContainer Name="BottomContainer" StyleClasses="LobbyBackground" MinHeight="500" HorizontalExpand="True" VerticalExpand="True">
                 <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True" HorizontalAlignment="Stretch" Margin="0">
                     <!-- Left Panel  -->
+                    <PanelContainer VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                    Margin="0 75" StyleClasses="AngleRect">
+                        <RichTextLabel Name="LobbyMessageLabel" Access="Public" Margin="5" />
+                    </PanelContainer>
                     <PanelContainer Name="LeftPanel" MinWidth="400" MaxWidth="500" StyleClasses="LobbyBackground" HorizontalExpand="True" VerticalExpand="True">
                         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="8 8 8 8" VerticalAlignment="Stretch">
                             <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="8 8 8 8">
@@ -60,6 +64,9 @@
                             <BoxContainer Orientation="Vertical" SeparationOverride="4" Name="VoteContainer" Access="Public" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 8"/>
                         </BoxContainer>
                     </PanelContainer>
+                    <!-- Server Currency -->
+                    <Label Name="Balance" Access="Public" StyleClasses="LabelHeadingBigger" VAlign="Center"
+                            HorizontalExpand="True" HorizontalAlignment="Center" />
                     <!-- Center Panel -->
                     <PanelContainer Name="CenterPanel" StyleClasses="LobbyBackground" MinWidth="400" HorizontalExpand="True" VerticalExpand="True">
                         <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Center" HorizontalAlignment="Center">
