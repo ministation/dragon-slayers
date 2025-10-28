@@ -132,6 +132,30 @@
   equipment:
     neck: ClothingNeckMantleBlueshield
 
+- type: loadout
+  id: BlueshieldOfficerOuterBlueshieldMantleAlt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorBlueshieldOfficer
+  equipment:
+    neck: ClothingNeckMantleBlueshieldSecond
+
+- type: loadout
+  id: BlueshieldOfficerOuterBlueshieldScarf
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorBlueshieldOfficer
+  equipment:
+    neck: ClothingNeckScarfBlueshield
+
+- type: loadout
+  id: BlueshieldOfficerOuterBlueshieldPoncho
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorBlueshieldOfficer
+  equipment:
+    neck: ClothingNeckPonchoBlueshield
+
 # Mask
 - type: loadout
   id: BlueshieldOfficerMaskLollypop
