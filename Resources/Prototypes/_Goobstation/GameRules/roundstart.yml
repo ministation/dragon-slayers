@@ -85,7 +85,7 @@
     - groups: CorporateObjectiveGroups
     maxDifficulty: 8 # Very rare antag so they should get a lot of objectives
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 15
     delay:
       min: 465
       max: 665 # Delay is so the heads help their department get set up.
@@ -111,7 +111,7 @@
   id: CalmTraitor # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 15
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
@@ -135,7 +135,7 @@
   id: CalmLing # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 15
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     agentName: changeling-roundend-name
@@ -158,7 +158,7 @@
   id: Calmops # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 15
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml
   - type: AntagSelection
@@ -227,7 +227,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 20
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
