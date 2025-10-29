@@ -12,8 +12,8 @@ public sealed partial class MiniGhostTargetWindow
     private static readonly Color AntagonistButtonColor = Color.FromHex("#7F4141");
     private static readonly Color PlaceButtonColor = Color.FromHex("#969696");
 
-    private const int DefaultButtonWidth = 200;
-    private const int DefaultButtonHeight = 35;
+    private const int DefaultButtonWidth = 180;
+    private const int DefaultButtonHeight = 30;
     private const float DefaultTooltipDelay = 0.1f;
 
     private const int MaxLenght = 15;
@@ -48,7 +48,7 @@ public sealed partial class MiniGhostTargetWindow
         {
             var departmentGrid = new GridContainer
             {
-                Columns = 5,
+                Columns = 2,
             };
 
             var departmentLabel = new Label
@@ -101,7 +101,7 @@ public sealed partial class MiniGhostTargetWindow
 
         var placesGrid = new GridContainer
         {
-            Columns = 5,
+            Columns = 2,
         };
 
         var countLabel = new Label
@@ -157,7 +157,7 @@ public sealed partial class MiniGhostTargetWindow
         {
             var departmentGrid = new GridContainer
             {
-                Columns = 5,
+                Columns = 2,
             };
 
             var labelText = string.Empty;

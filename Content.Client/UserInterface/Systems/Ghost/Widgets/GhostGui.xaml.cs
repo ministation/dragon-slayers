@@ -10,7 +10,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Widgets;
 [GenerateTypedNameReferences]
 public sealed partial class GhostGui : UIWidget
 {
-    public GhostTargetWindow TargetWindow { get; }
+    // public GhostTargetWindow TargetWindow { get; }
     public _Shitcode.UserInterface.Systems.Ghost.Controls.GhostBarRulesWindow GhostBarWindow { get; }
     // Mini edit - для красивой панельки призрака
     public MiniGhostTargetWindow TargetWindow { get; }
@@ -25,7 +25,7 @@ public sealed partial class GhostGui : UIWidget
     {
         RobustXamlLoader.Load(this);
 
-        TargetWindow = new GhostTargetWindow();
+        // TargetWindow = new GhostTargetWindow();
 
         GhostBarWindow = new _Shitcode.UserInterface.Systems.Ghost.Controls.GhostBarRulesWindow();
         // Mini edit - для красивой панельки призрака
