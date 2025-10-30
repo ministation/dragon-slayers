@@ -246,7 +246,6 @@
   name: blood-red over-ear headset
   description: An updated, modular syndicate intercom that fits over the head and takes encryption keys (there are 5 key slots.).
   components:
-  - type: Headset
   - type: EncryptionKeyHolder
     keySlots: 5
   - type: ContainerFill
@@ -257,6 +256,8 @@
     sprite: Clothing/Ears/Headsets/syndicate.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/syndicate.rsi
+  - type: Headset
+    color: "#732123"
 
 - type: entity
   parent: ClothingHeadsetAlt
