@@ -39,6 +39,7 @@
 - type: npcFaction
   id: Dragon
   hostile:
+    - Typan
     - NanoTrasen
     - Syndicate
     - Xeno
@@ -56,6 +57,7 @@
 - type: npcFaction
   id: NanoTrasen
   hostile:
+  - Typan
   - SimpleHostile
   - Syndicate
   - Xeno
@@ -81,6 +83,7 @@
 - type: npcFaction
   id: PetsNT
   hostile:
+  - Typan
   - Mouse
   - Balloon # Goob Balloon Edit     Pets can join the fight against the balloons
   - SimpleHostile
@@ -94,6 +97,7 @@
 - type: npcFaction
   id: SimpleHostile
   hostile:
+  - Typan
   - NanoTrasen
   - Syndicate
   - Passive
@@ -135,6 +139,7 @@
 - type: npcFaction
   id: Xeno
   hostile:
+  - Typan
   - NanoTrasen
   - Syndicate
   - Passive
@@ -154,6 +159,7 @@
 - type: npcFaction
   id: Zombie
   hostile:
+  - Typan
   - NanoTrasen
   - SimpleNeutral
   - SimpleHostile
@@ -174,6 +180,7 @@
 - type: npcFaction
   id: Revolutionary
   hostile:
+  - Typan
   - NanoTrasen
   - Zombie
   - SimpleHostile
@@ -188,6 +195,7 @@
 - type: npcFaction
   id: AllHostile
   hostile:
+  - Typan
   - NanoTrasen
   - Dragon
   - Mouse
@@ -207,10 +215,10 @@
   - PirateFaction # goob - pirates
 
 # Balloons Factions Edit:
-- type: npcFaction  
+- type: npcFaction
   id: Balloon
   # Balloons can't attack
-  
+
 - type: npcFaction
   id: Monkey
   hostile:
@@ -219,6 +227,7 @@
 - type: npcFaction
   id: Xenoborg
   hostile:
+  - Typan
   # they have brains
   - NanoTrasen
   - Syndicate
@@ -232,7 +241,7 @@
   - Xeno # rivalry
 
   # cause they are hostile to them
-  - SimpleHostile 
+  - SimpleHostile
   - AllHostile
   - Blob # Goobstation - Blob
   - Shadowling # Einstein Engines - Shadowlings

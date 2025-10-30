@@ -23,6 +23,10 @@
         skills:
         - ShuttleControl
         - AdvancedBuilding
+      - type: AntagImmune
+      - type: NpcFactionMember
+        factions:
+        - Typan
 
 - type: startingGear
   id: TypanAtmosTech

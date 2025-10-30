@@ -28,6 +28,10 @@
       skills:
       - Surgery
       - MedicalEquipment
+    - type: AntagImmune
+    - type: NpcFactionMember
+      factions:
+      - Typan
 
 - type: startingGear
   id: TypanMedic

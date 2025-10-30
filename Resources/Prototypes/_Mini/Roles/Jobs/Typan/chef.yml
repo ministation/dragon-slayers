@@ -21,6 +21,11 @@
       - type: Skills # Corvax-Next-Skills
         skills:
         - Butchering
+        - Shooting
+      - type: AntagImmune
+      - type: NpcFactionMember
+        factions:
+        - Typan
 
 - type: startingGear
   id: TypanChef
