@@ -26,6 +26,10 @@
         - ShuttleControl
         - Shooting
         - Butchering
+      - type: AntagImmune
+      - type: NpcFactionMember
+        factions:
+        - Typan
 
 - type: startingGear
   id: TypanCargotech

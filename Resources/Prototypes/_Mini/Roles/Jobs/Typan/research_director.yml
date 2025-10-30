@@ -28,6 +28,13 @@
       - type: Skills # Corvax-Next-Skills
         skills:
         - AdvancedBuilding
+        - Shooting
+        - MedicalEquipment
+        - Surgery
+      - type: AntagImmune
+      - type: NpcFactionMember
+        factions:
+        - Typan
 
 - type: startingGear
   id: TypanResearchDirector
