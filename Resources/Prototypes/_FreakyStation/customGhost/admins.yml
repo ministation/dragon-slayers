@@ -1,0 +1,55 @@
+- type: customGhost
+  id: EgorqlGhost
+  ckey: Egorql
+  sprite: /Textures/_FreakStation/Ghost/GhostEgorql.rsi
+  alpha: 0.8
+  ghostName: Egorql
+  ghostDescription: Блять че за хуйняя
+
+- type: customGhost
+  id: CashaGhost
+  ckey: Casha
+  sprite: /Textures/_FreakStation/Ghost/GhostCasha.rsi
+  alpha: 0.8
+  ghostName: Casha
+  ghostDescription: Допиваю свой бокал и снова в жизни ищу толк
+
+- type: customGhost
+  id: kef1rOOGhost
+  ckey: kef1r00
+  sprite: /Textures/_FreakStation/Ghost/GhostWhite.rsi
+  alpha: 0.8
+  ghostName: kef1r00
+  ghostDescription: "я не придумал"
+
+- type: customGhost
+  id: ANIvarmGhost
+  ckey: ANIvarm
+  sprite: /Textures/_FreakStation/Ghost/GhostKaiju.rsi
+  alpha: 0.8
+  ghostName: ANIvarm
+  ghostDescription: brr brr patapim
+
+- type: customGhost
+  id: SherlookGhost
+  ckey: Sherlook
+  sprite: /Textures/_FreakStation/Ghost/GhostFaceless.rsi
+  alpha: 0.8
+  ghostName: Sherlook
+  ghostDescription: Моя сука пенивайз, понеслась
+
+- type: customGhost
+  id: SmesharikGhost
+  ckey: Smesharik
+  sprite: /Textures/_FreakStation/Ghost/GhostIce.rsi
+  alpha: 0.8
+  ghostName: Smesharik
+  ghostDescription: Крест на шею, пулю в лоб, петли красят потолок
+
+- type: customGhost
+  id: HomyakkGhost
+  ckey: Homyakk
+  sprite: /Textures/_FreakStation/Ghost/GhostStar.rsi
+  alpha: 0.8
+  ghostName: Homyakk
+  ghostDescription: Долбоёб, нихуя не умеет

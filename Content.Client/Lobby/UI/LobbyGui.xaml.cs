@@ -44,17 +44,8 @@ namespace Content.Client.Lobby.UI
 
             LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
-
-            AuthorizationDiscordButton.OnPressed += _ =>
-            {
-                var userId = _playerManager.LocalSession?.UserId;
-                var requestUrl = $"{_cfg.GetCVar(CCCVars.DiscordAuthApiUrl)}/login/{userId.ToString()}";
-                _uriOpener.OpenUri(new Uri(requestUrl));
-            };
-
-            Boosty.OnPressed += _ => _uriOpener.OpenUri(new Uri("https://boosty.to/mini-station"));
-            Discord.OnPressed += _ => _uriOpener.OpenUri(new Uri("https://discord.gg/mini-station"));
-            Telegram.OnPressed += _ => _uriOpener.OpenUri(new Uri("https://t.me/mini_station"));
+            Boosty.OnPressed += _ => _uriOpener.OpenUri(new Uri("https://boosty.to/sherlol"));
+            Discord.OnPressed += _ => _uriOpener.OpenUri(new Uri("https://discord.gg/NMqvMnqNA6"));
             CharacterSetup.OnPressed += _ => SwitchState(LobbyGuiState.CharacterSetup);
             Rules.OnPressed += _ => new RulesAndInfoWindow().Open();
             Guidebook.OnPressed += _ => UserInterfaceManager.GetUIController<GuidebookUIController>().ToggleGuidebook();
