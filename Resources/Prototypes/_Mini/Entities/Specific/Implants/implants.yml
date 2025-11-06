@@ -27,3 +27,22 @@
   components:
   - type: Implanter
     implant: DeathRattleImplantTypan
+
+- type: entity
+  parent: [ OrganHumanHeart, BaseCentcommContraband ]
+  id: OrganHeartSandevistanBSO
+  name: Офицерский Сандевистан
+  description: Аналог контрабандного импланта Синдиката. Этот сделан для Офицеров "Синий Щит".
+  components:
+  - type: Cybernetics
+  - type: Sprite
+    sprite: _Goobstation/Objects/Misc/sandevistan.rsi
+    state: icon
+    scale: 0.5, 0.5
+  - type: Organ
+    onAdd:
+    - type: SandevistanUser
+      loadPerActiveSecond: 12
+      loadPerInactiveSecond: -6
+      attackSpeedModifer: 1.5
+      movementSpeedModifer: 1.6
