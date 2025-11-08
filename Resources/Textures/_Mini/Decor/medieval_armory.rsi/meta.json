@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 35
+    },
+    "states": [
+        {
+            "name": "rack"
+        }
+    ]
+}

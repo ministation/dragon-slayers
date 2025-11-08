@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "size": {
+      "x": 32,
+      "y": 64
+    },
+    "states": [
+      {
+        "name": "base"
+      },
+      {
+        "name": "door-close"
+      },
+      {
+        "name": "door-open"
+      },
+      {
+        "name": "indicator-locked"
+      },
+      {
+        "name": "indicator-notworking"
+      },
+      {
+        "name": "indicator-unlocked"
+      }
+    ]
+  }

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "watertank"
+    },
+    {
+      "name": "barrel"
+    },
+    {
+        "name": "barrel-content-1"
+    },
+    {
+        "name": "barrel-content-2"
+    },
+    {
+        "name": "barrel-content-3"
+    },
+    {
+        "name": "barrel-content-4"
+    },
+    {
+        "name": "barrel-content-5"
+    },
+    {
+        "name": "pit-content-1"
+    },
+    {
+        "name": "pit-content-2"
+    }
+  ]
+}

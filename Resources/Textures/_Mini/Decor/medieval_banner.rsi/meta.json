@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "banner"
+    },
+    {
+      "name": "banner_black"
+    },
+    {
+      "name": "banner_blul"
+    },
+    {
+      "name": "banner_blul_gold"
+    },
+    {
+      "name": "banner_fish"
+    },
+    {
+      "name": "banner_green"
+    },
+    {
+      "name": "banner_red"
+    },
+    {
+      "name": "banner_red_gold"
+    },
+    {
+      "name": "banner_white"
+    },
+    {
+      "name": "banner_yll"
+    },
+    {
+      "name": "banner_hell"
+    }
+  ]
+}

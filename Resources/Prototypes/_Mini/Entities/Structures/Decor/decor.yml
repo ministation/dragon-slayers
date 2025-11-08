@@ -1,0 +1,4382 @@
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedBlack
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: black
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedKayot
+  name: настенное знамя разбойников койота
+  description: Народ сильных и бесстрашных налётчиков, никто не может остановить их атаку. В их гербе изображён койот на светло-песочном фоне, олицетворяющий силу и устрашаемость.
+  components:
+  - type: Sprite
+    state: kayot
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedBlul
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: blul
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedFish
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: fish
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedGreen
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: green
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedHell
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: hell
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedRed
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: red
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedWhite
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: white
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedYll
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: yll
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedMerc
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: merc
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterTeamBasedWiz
+  name: "Free Tonto"
+  components:
+  - type: Sprite
+    state: wiz
+
+- type: entity
+  parent: BaseSign
+  id: MedievalPosterBase
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: _Mini/Decor/medieval_posters.rsi
+    snapCardinals: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: MedievalBannerBlack
+  parent: MedievalBannerBase
+  name: black banner
+  description: works better
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_black
+    drawdepth: Overdoors
+  - type: SpriteFade
+
+- type: entity
+  id: MedievalBannerBlue
+  parent: MedievalBannerBase
+  name: blue banner
+  description: works better
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_blul
+    drawdepth: Overdoors
+  - type: SpriteFade
+
+- type: entity
+  id: MedievalBannerFish
+  parent: MedievalBannerBase
+  name: fish banner
+  description: works better
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_fish
+    drawdepth: Overdoors
+  - type: SpriteFade
+
+- type: entity
+  id: MedievalBannerGreen
+  parent: MedievalBannerBase
+  name: green banner
+  description: works better
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_green
+    drawdepth: Overdoors
+  - type: SpriteFade
+
+- type: entity
+  id: MedievalBannerRed
+  parent: MedievalBannerBase
+  name: red banner
+  description: works better
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_red
+    drawdepth: Overdoors
+  - type: SpriteFade
+
+- type: entity
+  id: MedievalBannerWhite
+  parent: MedievalBannerBase
+  name: white banner
+  description: works better
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_white
+    drawdepth: Overdoors
+  - type: SpriteFade
+
+- type: entity
+  id: MedievalBannerYellow
+  parent: MedievalBannerBase
+  name: yellow banner
+  description: works better
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_yll
+    drawdepth: Overdoors
+  - type: SpriteFade
+
+- type: entity
+  id: MedievalBannerHell
+  parent: MedievalBannerBase
+  name: hell banner
+  description: works better
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_hell
+    drawdepth: Overdoors
+  - type: SpriteFade
+
+- type: entity
+  parent: CrateCoffin
+  id: MedievalCrateCoffin
+  name: CrateCoffin
+
+- type: entity
+  parent: CrateGeneric
+  id: MedievalChest
+  name: MedievalChest
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/chest.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Icon
+    sprite: _Mini/Decor/chest.rsi
+    state: base
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 125
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 135
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: Construction
+    graph: CrateLivestock
+    node: cratelivestock
+    containers:
+    - entity_storage
+
+- type: entity
+  parent: CrateGeneric
+  id: MedievalChest2
+  name: MedievalChest2
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/chest2.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Icon
+    sprite: _Mini/Decor/chest2.rsi
+    state: base
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 425
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 135
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: Construction
+    graph: CrateLivestock
+    node: cratelivestock
+    containers:
+    - entity_storage
+
+- type: entity
+  parent: CrateGeneric
+  id: MedievalChest3
+  name: MedievalChest3
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/chest3.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Icon
+    sprite: _Mini/Decor/chest3.rsi
+    state: base
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 755
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 135
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: Construction
+    graph: CrateLivestock
+    node: cratelivestock
+    containers:
+    - entity_storage
+
+- type: entity
+  parent: CrateGeneric
+  id: MedievalChest4
+  name: MedievalChest4
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/chest4.rsi
+    layers:
+    - state: base
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Icon
+    sprite: _Mini/Decor/chest4.rsi
+    state: base
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 55
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.29"
+        density: 135
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: Construction
+    graph: MedievalChest4
+    node: MedievalChest4
+
+- type: construction
+  id: MedievalChest4
+  name: деревянный сундук
+  description: Самый простой сундук.
+  graph: MedievalChest4
+  startNode: start
+  targetNode: MedievalChest4
+  category: construction-category-furniture
+  icon:
+    sprite: _Mini/Decor/chest4.rsi
+    state: base
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: constructionGraph
+  id: MedievalChest4
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: MedievalChest4
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 5
+              doAfter: 12
+    - node: MedievalChest4
+      entity: MedievalChest4
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank
+              amount: 5
+          steps:
+            - tool: Prying
+              doAfter: 500
+
+
+- type: entity
+  parent: WaterTank
+  id: MedievalWater
+  suffix: Full
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Water
+          Quantity: 800
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 900
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    sprite: _Mini/Decor/pit2.rsi
+    layers:
+        - state: watertank
+        - state: pit-content-4
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: pit-content-
+  - type: SolutionRegeneration
+    solution: tank
+    generated:
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
+
+- type: entity
+  parent: WaterTank
+  id: MedievalBarrelNoth
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Water
+          Quantity: 100
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.42
+        density: 135
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 5
+
+  - type: Sprite
+    sprite: _Mini/Decor/pit.rsi
+    layers:
+        - state: barrel
+        - state: barrel-content-1
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: barrel-content-
+
+
+- type: entity
+  parent: WaterTank
+  id: MedievalBarrelBase
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Water
+          Quantity: 450
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 5
+  - type: Sprite
+    sprite: _Mini/Decor/pit.rsi
+    layers:
+        - state: barrel
+        - state: barrel-content-1
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: barrel-content-
+
+- type: entity
+  parent: MedievalBarrelBase
+  id: MedievalBarrelWine
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Wine
+          Quantity: 450
+
+- type: entity
+  parent: MedievalBarrelBase
+  id: MedievalBarrelMead
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Mead
+          Quantity: 450
+
+- type: entity
+  parent: MedievalBarrelBase
+  id: MedievalBarrelRedMead
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: RedMead
+          Quantity: 450
+
+- type: entity
+  parent: MedievalBarrelBase
+  id: MedievalBarrelBeer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Beer
+          Quantity: 450
+
+- type: entity
+  parent: MedievalBarrelBase
+  id: MedievalBarrelMoonshine
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Moonshine
+          Quantity: 450
+
+- type: entity
+  parent: MedievalBarrelBase
+  id: MedievalBarrelRum
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Rum
+          Quantity: 450
+
+- type: entity
+  parent: MedievalBarrelBase
+  id: MedievalBarrelVodka
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 450
+
+- type: entity
+  parent: MedievalBarrelBase
+  id: MedievalBarrelAle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Ale
+          Quantity: 450
+
+- type: entity
+  id: MedievalDecorOhapka
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_drova.rsi
+    state: drova
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 7
+            max: 12
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.65
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+
+- type: entity
+  id: MedievalDecorKolka
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: kolka
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/_Mini/tree_got_hit.ogg
+        params:
+          variation: 0.05
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+
+- type: entity
+  id: MedievalDecorWheat1
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: wheat1
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          WheatBushel:
+            min: 5
+            max: 12
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+
+- type: entity
+  id: MedievalDecorWheat2
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: wheat2
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          WheatBushel:
+            min: 5
+            max: 12
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorMogila1
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: mogila1
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorMogila2
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: mogila2
+    drawdepth: Overdoors
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: SpriteFade
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorHelpParent
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: mogila3
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorMogila3
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: mogila3
+    drawdepth: Overdoors
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: SpriteFade
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorBox
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: box
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.49
+        density: 190
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: Storage
+    grid:
+    - 0,0,15,6
+    maxItemSize: Ginormous
+    storageOpenSound: /Audio/_Mini/wood_open.ogg
+    storageCloseSound: /Audio/_Mini/wood_closed.ogg
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: StorageFill
+    contents:
+      - id: MedievalRevent
+        prob: 0.1
+      - id: MedievalRevent
+        prob: 0.1
+      - id: MedievalRevent
+        prob: 0.1
+      - id: MedievalDaggerT3
+        prob: 0.06
+      - id: FoodCarrot
+        prob: 0.06
+      - id: MedievalBeaker
+        prob: 0.06
+      - id: MedievalBrutepack
+        prob: 0.06
+      - id: MedievalClothingOuterArmorFur
+        prob: 0.06
+      - id: DrinkGlassWhite
+        prob: 0.06
+      - id: MedievalPaper
+        prob: 0.06
+      - id: MedievalClothingHeadHelmetCap
+        prob: 0.06
+      - id: ClothingHandsGlovesColorLightBrown
+        prob: 0.06
+      - id: ClothingHandsGlovesColorBlack
+        prob: 0.06
+      - id: ClothingHandsGlovesColorBrown
+        prob: 0.06
+      - id: MedievalMopItem
+        prob: 0.06
+      - id: MedievalDrugChemistryBottle
+        prob: 0.06
+      - id: FoodWatermelonSlice
+        prob: 0.06
+      - id: FoodCheeseSlice
+        prob: 0.06
+      - id: FoodPotato
+        prob: 0.06
+      - id: FoodTomato
+        prob: 0.06
+      - id: FoodBreadMoldySlice
+        prob: 0.12
+      - id: RagItem
+        prob: 0.12
+      - id: Ointment
+        prob: 0.09
+      - id: MedievalBrutepack
+        prob: 0.09
+      - id: Gauze
+        prob: 0.09
+
+- type: entity
+  id: MedievalDecorTorch
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: torch
+  - type: Physics
+    bodyType: Dynamic
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: PointLight
+    color: Orange
+    radius: 12
+    energy: 2.3
+  - type: Anchorable
+  - type: AmbientSound
+    volume: -15
+    range: 1.5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+
+- type: entity
+  id: MedievalDecorTorchColone
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: torch_colone
+  - type: Physics
+    bodyType: Dynamic
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: PointLight
+    color: Orange
+    radius: 18
+    energy: 1.35
+  - type: Anchorable
+  - type: AlwaysHot
+  - type: AmbientSound
+    volume: -15
+    range: 1.5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+
+- type: entity
+  parent: Bed
+  id: MedievalMedicalBed
+  name: MedievalMedicalBed
+  description: MedievalMedicalBed
+  components:
+  - type: Strap
+    buckleTime: 0.5
+    unbuckleTime: 0.5
+    buckleSound:
+      path: /Audio/_Mini/Effects/lay_on_bed1.ogg
+    unbuckleSound:
+      path: /Audio/_Mini/Effects/lay_on_bed2.ogg
+  - type: Buckle
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: bed
+  - type: HealOnBuckle
+    damage:
+      groups:
+        Brute: -0.5
+        Burn: -0.5
+        Airloss: -1.6
+      types:
+        Poison: -0.2
+        Caustic: -0.1
+        Radiation: -0.2
+
+- type: entity
+  parent: Bed
+  id: MedievalMedicalBed2
+  name: MedievalMedicalBed2
+  description: MedievalMedicalBed2
+  components:
+  - type: Strap
+    buckleTime: 0.5
+    unbuckleTime: 0.5
+    buckleSound:
+      path: /Audio/_Mini/Effects/lay_on_bed1.ogg
+    unbuckleSound:
+      path: /Audio/_Mini/Effects/lay_on_bed2.ogg
+  - type: Buckle
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: bed2
+  - type: HealOnBuckle
+    damage:
+      groups:
+        Brute: -2.6
+        Burn: -2.8
+        Airloss: -3
+      types:
+        Poison: -1.8
+        Caustic: -0.5
+        Radiation: -0.8
+
+- type: entity
+  id: MedievalDecorAnons
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_anons.rsi
+    state: box
+    drawdepth: Overdoors
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.7
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: Storage
+    grid:
+    - 0,0,6,1
+    whitelist:
+      tags:
+      - Document
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: SpriteFade
+
+- type: entity
+  id: MedievalTrapDoor
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: trapdoor
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 1
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalLadder
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: ladder
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 1
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalTrapDoor2
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: trapdoor
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 2
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalLadder2
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: ladder
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 2
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalTrapDoor3
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: trapdoor
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 3
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalLadder3
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: ladder
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 3
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalTrapDoor4
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: trapdoor
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 4
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalLadder4
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: ladder
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 4
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalTrapDoor5
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: trapdoor
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 5
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  id: MedievalLadder5
+  name: ladder
+  desc: test ladder
+  components:
+    - type: Sprite
+      drawdepth: FloorObjects
+      sprite: _Mini/Decor/medieval_decor.rsi
+      layers:
+      - state: ladder
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Transform
+      anchored: true
+    - type: Physics
+      bodyType: Static
+      canCollide: false
+    #- type: Ladder
+    #  ladderID: 5
+    - type: AtmosDevice
+    - type: PointLight
+      color: white
+      energy: 2
+      radius: 1.5
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign1
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_1
+    drawdepth: Overdoors
+  - type: SpriteFade
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign2
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_2
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign3
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_3
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign4
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_4
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign5
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_5
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign6
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_6
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign7
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_7
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign8
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_8
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+- type: entity
+  parent: MedievalDecorHelpParent
+  id: MedievalSign9
+  name: sign
+  description: A sign
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: sign_9
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+
+
+- type: entity
+  id: MedievalDecorBags1
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: bags1
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorBags2
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: bags2
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorBags3
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: bags3
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorBags4
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: bags4
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorBags5
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: bags5
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieNecro
+  name: rouny plushie
+  description: Rouny
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: plushie_necro
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieTraveller
+  name: rouny plushie
+  description: Rouny
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: plushie_traveller
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieArcher
+  name: rouny plushie
+  description: Rouny
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: plushie_archer
+
+- type: entity
+  parent: BasePlushie
+  id: MedievalPlushieWizard
+  name: rouny plushie
+  description: Rouny
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: plushie_wizard
+
+- type: entity
+  id: MedievalDecorDangerSign
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: danger
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorDangerSign2
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: danger2
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorDangerSign3
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: danger3
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorCastle1
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: rack
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: Storage
+    grid:
+    - 0,0,4,1
+    maxItemSize: Ginormous
+    #storageOpenSound: /Audio/_Mini/wood_open.ogg
+    #storageCloseSound: /Audio/_Mini/wood_closed.ogg
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: StorageFill
+    contents:
+      - id: MedievalDaggerT3
+        prob: 0.2
+      - id: MedievalWoodenSword
+        prob: 0.2
+      - id: MedievalMaceT3HeavyBone
+        prob: 0.2
+      - id: BaseBallBat
+        prob: 0.2
+      - id: MedievalHatchet
+        prob: 0.2
+      - id: KitchenKnife
+        prob: 0.2
+      - id: MedievalShortSword
+        prob: 0.2
+
+
+- type: entity
+  id: MedievalDecorCastle2
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_armory.rsi
+    state: rack
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: Storage
+    grid:
+    - 0,0,1,1
+    maxItemSize: Ginormous
+    #storageOpenSound: /Audio/_Mini/wood_open.ogg
+    #storageCloseSound: /Audio/_Mini/wood_closed.ogg
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: StorageFill
+    contents:
+      - id: MedievalClothingHeadHelmetNazal
+        prob: 0.03
+      - id: MedievalIronGloves
+        prob: 0.06
+      - id: MedievalClothingFeetSteel
+        prob: 0.06
+      - id: MedievalClothingHeadHelmetBacinet
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetSalad
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetSaladLight
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetCrusader
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetShapel
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetNormandFree
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetNormand
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetHoodHelmet
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetNormandFree
+        prob: 0.15
+      - id: MedievalClothingHeadHelmetNormandFree
+        prob: 0.15
+
+- type: tile
+  id: MedievalFloorPlanetGrass1
+  name: tiles-grass-planet-floor1
+  sprite: /Textures/_Mini/Tiles/Planet/MdvGrass1/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 5
+  edgeSprites:
+    SouthEast: /Textures/_Mini/Tiles/Planet/MdvGrass1/single_edge_SE.png
+    NorthEast: /Textures/_Mini/Tiles/Planet/MdvGrass1/single_edge_NE.png
+    NorthWest: /Textures/_Mini/Tiles/Planet/MdvGrass1/single_edge_NW.png
+    SouthWest: /Textures/_Mini/Tiles/Planet/MdvGrass1/single_edge_SW.png
+    South: /Textures/_Mini/Tiles/Planet/MdvGrass1/double_edge_S.png
+    East: /Textures/_Mini/Tiles/Planet/MdvGrass1/double_edge_E.png
+    North: /Textures/_Mini/Tiles/Planet/MdvGrass1/double_edge_N.png
+    West: /Textures/_Mini/Tiles/Planet/MdvGrass1/double_edge_W.png
+  baseTurf: FloorPlanetDirt
+  isSubfloor: true
+  canCrowbar: false
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: FloorTileItemGrass
+  heatCapacity: 99910000
+  weather: true
+  indestructible: true
+  badSmellMod: 1.25
+
+# Caves
+- type: tile
+  id: FloorCave
+  name: tiles-cave
+  sprite: /Textures/_Mini/Tiles/Planet/Cave/cave.png
+  variants: 7
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 4
+  edgeSprites:
+    SouthEast: /Textures/_Mini/Tiles/Planet/Cave/single-stoneedge-A.png
+    NorthEast: /Textures/_Mini/Tiles/Planet/Cave/single-stoneedge-B.png
+    NorthWest: /Textures/_Mini/Tiles/Planet/Cave/single-stoneedge-C.png
+    SouthWest: /Textures/_Mini/Tiles/Planet/Cave/single-stoneedge-D.png
+    South: /Textures/_Mini/Tiles/Planet/Cave/double-stoneedge-A.png
+    East: /Textures/_Mini/Tiles/Planet/Cave/double-stoneedge-B.png
+    North: /Textures/_Mini/Tiles/Planet/Cave/double-stoneedge-C.png
+    West: /Textures/_Mini/Tiles/Planet/Cave/double-stoneedge-D.png
+  baseTurf: Space
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 99910000
+  badSmellMod: 1.5
+
+- type: tile
+  id: MedievalFloorPlanetGrass3
+  name: tiles-grass-planet-floor3
+  sprite: /Textures/_Mini/Tiles/Planet/MdvGrass3/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 5
+  edgeSprites:
+    SouthEast: /Textures/_Mini/Tiles/Planet/MdvGrass3/single_edge_SE.png
+    NorthEast: /Textures/_Mini/Tiles/Planet/MdvGrass3/single_edge_NE.png
+    NorthWest: /Textures/_Mini/Tiles/Planet/MdvGrass3/single_edge_NW.png
+    SouthWest: /Textures/_Mini/Tiles/Planet/MdvGrass3/single_edge_SW.png
+    South: /Textures/_Mini/Tiles/Planet/MdvGrass3/double_edge_S.png
+    East: /Textures/_Mini/Tiles/Planet/MdvGrass3/double_edge_E.png
+    North: /Textures/_Mini/Tiles/Planet/MdvGrass3/double_edge_N.png
+    West: /Textures/_Mini/Tiles/Planet/MdvGrass3/double_edge_W.png
+  baseTurf: FloorPlanetDirt
+  isSubfloor: true
+  canCrowbar: false
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: FloorTileItemGrass
+  heatCapacity: 99910000
+  weather: true
+  indestructible: true
+  badSmellMod: 1.25
+
+- type: tile
+  id: MedievalFloorPlanetGrass4
+  name: tiles-grass-planet-floor4
+  sprite: /Textures/_Mini/Tiles/Planet/MdvGrass4/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 6
+  edgeSprites:
+    SouthEast: /Textures/_Mini/Tiles/Planet/MdvGrass4/single_edge_SE.png
+    NorthEast: /Textures/_Mini/Tiles/Planet/MdvGrass4/single_edge_NE.png
+    NorthWest: /Textures/_Mini/Tiles/Planet/MdvGrass4/single_edge_NW.png
+    SouthWest: /Textures/_Mini/Tiles/Planet/MdvGrass4/single_edge_SW.png
+    South: /Textures/_Mini/Tiles/Planet/MdvGrass4/double_edge_S.png
+    East: /Textures/_Mini/Tiles/Planet/MdvGrass4/double_edge_E.png
+    North: /Textures/_Mini/Tiles/Planet/MdvGrass4/double_edge_N.png
+    West: /Textures/_Mini/Tiles/Planet/MdvGrass4/double_edge_W.png
+  baseTurf: FloorPlanetDirt
+  isSubfloor: true
+  canCrowbar: false
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: FloorTileItemGrass
+  heatCapacity: 99910000
+  weather: true
+  indestructible: true
+  badSmellMod: 1.25
+
+- type: tile
+  id: MedievalFloorPlanetGrass5
+  name: tiles-grass-planet-floor5
+  sprite: /Textures/_Mini/Tiles/Planet/MdvGrass5/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 7
+  edgeSprites:
+    SouthEast: /Textures/_Mini/Tiles/Planet/MdvGrass5/single_edge_SE.png
+    NorthEast: /Textures/_Mini/Tiles/Planet/MdvGrass5/single_edge_NE.png
+    NorthWest: /Textures/_Mini/Tiles/Planet/MdvGrass5/single_edge_NW.png
+    SouthWest: /Textures/_Mini/Tiles/Planet/MdvGrass5/single_edge_SW.png
+    South: /Textures/_Mini/Tiles/Planet/MdvGrass5/double_edge_S.png
+    East: /Textures/_Mini/Tiles/Planet/MdvGrass5/double_edge_E.png
+    North: /Textures/_Mini/Tiles/Planet/MdvGrass5/double_edge_N.png
+    West: /Textures/_Mini/Tiles/Planet/MdvGrass5/double_edge_W.png
+  baseTurf: FloorPlanetDirt
+  isSubfloor: true
+  canCrowbar: false
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: FloorTileItemGrass
+  heatCapacity: 99910000
+  weather: true
+  indestructible: true
+  badSmellMod: 1.25
+
+- type: tile
+  id: MedievalFloorPlanetGrass6
+  name: tiles-grass-planet-floor6
+  sprite: /Textures/_Mini/Tiles/Planet/MdvGrass6/grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 8
+  edgeSprites:
+    SouthEast: /Textures/_Mini/Tiles/Planet/MdvGrass6/single_edge_SE.png
+    NorthEast: /Textures/_Mini/Tiles/Planet/MdvGrass6/single_edge_NE.png
+    NorthWest: /Textures/_Mini/Tiles/Planet/MdvGrass6/single_edge_NW.png
+    SouthWest: /Textures/_Mini/Tiles/Planet/MdvGrass6/single_edge_SW.png
+    South: /Textures/_Mini/Tiles/Planet/MdvGrass6/double_edge_S.png
+    East: /Textures/_Mini/Tiles/Planet/MdvGrass6/double_edge_E.png
+    North: /Textures/_Mini/Tiles/Planet/MdvGrass6/double_edge_N.png
+    West: /Textures/_Mini/Tiles/Planet/MdvGrass6/double_edge_W.png
+  baseTurf: FloorPlanetDirt
+  isSubfloor: true
+  canCrowbar: false
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: FloorTileItemGrass
+  heatCapacity: 99910000
+  weather: true
+  indestructible: true
+  badSmellMod: 1.25
+
+- type: entity
+  id: MedievalDecorCastle3
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: pero
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Transform
+    noRot: true
+  - type: Clickable
+  - type: InteractionOutline
+
+- type: entity
+  id: MedievalDecorCastleBase
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: rack
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalDecorCastle4
+  parent: MedievalDecorCastleBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: jar1
+
+- type: entity
+  id: MedievalDecorCastle5
+  parent: MedievalDecorCastleBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: jar2
+
+- type: entity
+  id: MedievalDecorCastle6
+  parent: MedievalDecorCastleBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: jar3
+
+- type: entity
+  id: MedievalDecorCastle7
+  parent: MedievalDecorCastleBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: jar4
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterWallMap1
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: map1
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterWallMap2
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: map2
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterWallPaint1
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: paint1
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterWallPaint2
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: paint2
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterWallShield1
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: shield1
+
+- type: entity
+  parent: MedievalPosterBase
+  id: MedievalPosterWallShield2
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: shield2
+
+- type: entity
+  id: MedievalBaseTree
+  description: Yep, it's a tree.
+  abstract: true
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Mini/Decor/flora_trees.rsi
+    drawdepth: Overdoors
+    offset: 0,0.9
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 2
+            max: 8
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalBaseTreeLarge
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/flora_treeslarge.rsi
+    offset: 0,1.55
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.18,-0.35,0.18,0.35"
+        density: 2000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraTree01
+  name: tree
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraTree02
+  name: tree
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraTree03
+  name: tree
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraTree04
+  name: tree
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraTree05
+  name: tree
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: MedievalBaseTree
+  id: MedievalFloraTree06
+  name: tree
+  components:
+  - type: Sprite
+    state: tree06
+
+- type: entity
+  parent: MedievalBaseTreeLarge
+  id: MedievalFloraTreeLarge01
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge01
+
+- type: entity
+  parent: MedievalBaseTreeLarge
+  id: MedievalFloraTreeLarge02
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge02
+
+- type: entity
+  parent: MedievalBaseTreeLarge
+  id: MedievalFloraTreeLarge03
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge03
+
+- type: entity
+  parent: MedievalBaseTreeLarge
+  id: MedievalFloraTreeLarge04
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge04
+
+- type: entity
+  parent: MedievalBaseTreeLarge
+  id: MedievalFloraTreeLarge05
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge05
+
+- type: entity
+  parent: MedievalBaseTreeLarge
+  id: MedievalFloraTreeLarge06
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge06
+
+- type: entity
+  id: MedievalBarrierMagic
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    drawdepth: Overdoors
+    offset: 0,0.5
+    sprite: _Mini/Decor/barrier.rsi
+    state: barrier
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: PointLight
+    radius: 7.5
+    energy: 21
+    color: red
+    castShadows: false
+  - type: AmbientSound
+    volume: -3
+    range: 6.5
+    sound:
+      path: /Audio/_Mini/barier_ambient.ogg
+
+- type: entity
+  id: MedievalDecorDoorRespawn
+  parent: MedievalDecorSpikes1
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: door
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 760000
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MedievalEssence:
+            min: 2
+            max: 3
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: MedievalDecorSpikes1
+  parent: MedievalDecorHelpParent
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/spikes.rsi
+    state: spike1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 3
+
+
+- type: entity
+  id: MedievalDecorSpikes2
+  parent: MedievalDecorSpikes1
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/spikes.rsi
+    state: spike2
+
+- type: entity
+  id: MedievalDecorSpikes3
+  parent: MedievalDecorSpikes1
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/spikes.rsi
+    state: spike3
+
+- type: entity
+  id: MedievalDecorSpikes4
+  parent: MedievalDecorSpikes1
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/spikes.rsi
+    state: spike4
+
+- type: entity
+  id: MedievalDecorSpikes5
+  parent: MedievalDecorSpikes1
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/spikes.rsi
+    state: spike5
+
+- type: entity
+  id: MedievalDecorSpikes6
+  parent: MedievalDecorSpikes1
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/spikes.rsi
+    state: spike6
+
+- type: entity
+  id: MedievalDecorSpikes7
+  parent: MedievalDecorSpikes1
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/spikes.rsi
+    state: spike7
+
+- type: entity
+  id: MedievalDecorSpikes8
+  parent: MedievalDecorSpikes1
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/spikes.rsi
+    state: spike8
+
+- type: entity
+  id: MedievalMagicSpellcraftFire
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/magic_spellcraft.rsi
+    state: booktable_fire
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.81
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: PointLight
+    radius: 2.5
+    energy: 9
+    color: orange
+    castShadows: false
+
+- type: entity
+  id: MedievalMagicSpellcraftWater
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/magic_spellcraft.rsi
+    state: booktable_water
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.81
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: PointLight
+    radius: 2.5
+    energy: 9
+    color: blue
+    castShadows: false
+
+- type: entity
+  id: MedievalMagicSpellcraftHoly
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/magic_spellcraft.rsi
+    state: booktable_light
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.81
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: PointLight
+    radius: 2.5
+    energy: 4
+    color: yellow
+    castShadows: false
+
+- type: entity
+  name: comfy chair :_)
+  id: MedievalGallows
+  parent: ChairBase
+  description: It looks comfy.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/gallows.rsi
+    state: icon
+  - type: Strap
+    buckleOffset: "0.05,0.05"
+    unbuckleSound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+    buckleSound:
+      path: /Audio/Items/jumpsuit_equip.ogg
+  - type: HealOnBuckle
+    damage:
+      groups:
+        Airloss: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: CP14HighBush
+  name: high bush
+  description: Very tall and dense thickets. Perhaps someone is watching you from them
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Mini/Decor/GrassHighBush.rsi
+    drawdepth: Mobs
+    offset: 0,0.3
+    layers:
+      - state: grass_high_bush1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        grass_high_bush1: ""
+        grass_high_bush2: ""
+        grass_high_bush3: ""
+        grass_high_bush4: ""
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MedievalGrass:
+              min: 4
+              max: 7
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.39
+    sprintSpeedModifier: 0.39
+  - type: TriggerOnCollide
+    fixtureID: fix1
+  - type: EmitSoundOnTrigger
+    sound: "/Audio/_Mini/bush_collide.ogg"
+
+- type: entity
+  id: RandomBushOffsetSpawner
+  name: random bush offset spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Mini/Decor/GrassHighBush.rsi
+      state: grass_high_bush1
+  - type: RandomSpawner
+    prototypes:
+    - CP14HighBush
+    chance: 1
+    offset: 0.25
+
+- type: entity
+  parent: MedievalBaseTreeCactus
+  id: MedievalFloraTreeCactus1
+  name: tree
+  components:
+  - type: Sprite
+    state: cactus1
+
+- type: entity
+  parent: MedievalBaseTreeCactus
+  id: MedievalFloraTreeCactus2
+  name: tree
+  components:
+  - type: Sprite
+    state: cactus2
+
+- type: entity
+  parent: MedievalBaseTreeCactus
+  id: MedievalFloraTreeCactus3
+  name: tree
+  components:
+  - type: Sprite
+    state: cactus3
+
+- type: entity
+  parent: MedievalBaseTreeCactus
+  id: MedievalFloraTreeCactus4
+  name: tree
+  components:
+  - type: Sprite
+    state: cactus4
+
+- type: entity
+  parent: MedievalBaseTreeCactus
+  id: MedievalFloraTreeCactus5
+  name: tree
+  components:
+  - type: Sprite
+    state: cactus5
+
+- type: entity
+  id: MedievalBaseTreeCactus
+  description: Yep, it's a tree.
+  abstract: true
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: DamageContacts
+    damage:
+     types:
+       Piercing: 3
+  - type: DamageOnInteract
+    damage:
+      types:
+         Piercing: 4
+    popupText: cactus-component-contact-damage
+  - type: DamageOnAttacked
+    damage:
+      types:
+         Piercing: 6
+  - type: Sprite
+    noRot: true
+    sprite: _Mini/Decor/cactus.rsi
+    drawdepth: Overdoors
+    offset: 0,0.24
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.2,0.15,0.2"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 1
+            max: 3
+
+- type: entity
+  id: MedievalBaseTreeAutumn
+  description: Yep, it's a tree.
+  abstract: true
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Mini/Decor/flora_trees_autumn.rsi
+    drawdepth: Overdoors
+    offset: 0,0.9
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Log:
+            min: 2
+            max: 8
+
+- type: entity
+  parent: MedievalBaseTreeAutumn
+  id: MedievalBaseTreeAutumnLarge
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/flora_treeslarge_autumn.rsi
+    offset: 0,1.55
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.18,-0.35,0.18,0.35"
+        density: 2000
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: MedievalBaseTreeAutumn
+  id: MedievalFloraTreeAutumn01
+  name: tree
+  components:
+  - type: Sprite
+    state: tree01
+
+- type: entity
+  parent: MedievalBaseTreeAutumn
+  id: MedievalFloraTreeAutumn02
+  name: tree
+  components:
+  - type: Sprite
+    state: tree02
+
+- type: entity
+  parent: MedievalBaseTreeAutumn
+  id: MedievalFloraTreeAutumn03
+  name: tree
+  components:
+  - type: Sprite
+    state: tree03
+
+- type: entity
+  parent: MedievalBaseTreeAutumn
+  id: MedievalFloraTreeAutumn04
+  name: tree
+  components:
+  - type: Sprite
+    state: tree04
+
+- type: entity
+  parent: MedievalBaseTreeAutumn
+  id: MedievalFloraTreeAutumn05
+  name: tree
+  components:
+  - type: Sprite
+    state: tree05
+
+- type: entity
+  parent: MedievalBaseTreeAutumn
+  id: MedievalFloraTreeAutumn06
+  name: tree
+  components:
+  - type: Sprite
+    state: tree06
+
+- type: entity
+  parent: MedievalBaseTreeAutumnLarge
+  id: MedievalFloraTreeAutumnLarge01
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge01
+
+- type: entity
+  parent: MedievalBaseTreeAutumnLarge
+  id: MedievalFloraTreeAutumnLarge02
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge02
+
+- type: entity
+  parent: MedievalBaseTreeAutumnLarge
+  id: MedievalFloraTreeAutumnLarge03
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge03
+
+- type: entity
+  parent: MedievalBaseTreeAutumnLarge
+  id: MedievalFloraTreeAutumnLarge04
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge04
+
+- type: entity
+  parent: MedievalBaseTreeAutumnLarge
+  id: MedievalFloraTreeAutumnLarge05
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge05
+
+- type: entity
+  parent: MedievalBaseTreeAutumnLarge
+  id: MedievalFloraTreeAutumnLarge06
+  name: large tree
+  components:
+  - type: Sprite
+    state: treelarge06
+
+- type: entity
+  id: MedievalBarrierCurse
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    drawdepth: Overdoors
+    #offset: 0,0.5
+    sprite: _Mini/Decor/barrier_curse.rsi
+    state: curse
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: PointLight
+    radius: 4.5
+    energy: 15
+    color: red
+    castShadows: false
+
+- type: entity
+  id: MedievalFlagCaptureWhite
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    drawdepth: Overdoors
+    #offset: 0,0.5
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: PointLight
+    radius: 2.5
+    energy: 3
+    color: white
+    castShadows: false
+
+- type: entity
+  id: MedievalFlagCaptureBlue
+  parent: MedievalFlagCaptureWhite
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_blul
+  - type: PointLight
+    radius: 2.5
+    energy: 3
+    color: cyan
+    castShadows: false
+
+
+- type: entity
+  id: MedievalFlagCaptureRed
+  parent: MedievalFlagCaptureWhite
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_red
+  - type: PointLight
+    radius: 2.5
+    energy: 3
+    color: red
+    castShadows: false
+
+
+- type: entity
+  id: MedievalFlagCaptureBlueGold
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_blul_gold
+  - type: PointLight
+    radius: 3.7
+    energy: 7.6
+    color: cyan
+    castShadows: false
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalFlagCaptureRedGold
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: _Mini/Decor/medieval_banner.rsi
+    state: banner_red_gold
+  - type: PointLight
+    radius: 3.7
+    energy: 7.6
+    color: red
+    castShadows: false
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+
+- type: entity
+  id: MedievalSeedExtractor
+  name: seed extractor
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  description: Extracts seeds from produce.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/seed_extractor.rsi
+    snapCardinals: true
+    layers:
+    - state: seedextractor-off
+    - state: seedextractor-unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+  - type: SeedExtractor
+  - type: Machine
+    board: SeedExtractorMachineCircuitboard
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 55
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      #- !type:SpawnEntitiesBehavior
+      #  spawn:
+      #    MaterialWoodPlank1:
+      #      min: 2
+      #      max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: ApcPowerReceiver
+    needsPower: false
+
+- type: entity
+  parent: MedievalGrassBush
+  id: MedievalGrassBushAutumn
+  name: high bush
+  description: Very tall and dense thickets. Perhaps someone is watching you from them
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/GrassBush_autumn.rsi
+  - type: EmitSoundOnTrigger
+    sound: "/Audio/_Mini/bush_collide.ogg"
+
+- type: entity
+  id: MedievalGrassBush
+  name: high bush
+  description: Very tall and dense thickets. Perhaps someone is watching you from them
+  components:
+  - type: EmitSoundOnTrigger
+    sound: "/Audio/_Mini/bush_collide.ogg"
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Mini/Decor/GrassBush.rsi
+    drawdepth: Mobs
+    offset: 0,0.3
+    layers:
+      - state: grass_high_bush1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        grass_high_bush1: ""
+        grass_high_bush2: ""
+        grass_high_bush3: ""
+        grass_high_bush4: ""
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.55,-0.55,0.55,0.55"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 45
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MedievalGrass:
+              min: 6
+              max: 9
+            FoodBerries:
+              min: 0
+              max: 1
+            FoodCherryPotion:
+              min: 0
+              max: 1
+            FoodCherry:
+              min: 0
+              max: 2
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.27
+    sprintSpeedModifier: 0.27
+  - type: TriggerOnCollide
+    fixtureID: fix1
+
+- type: entity
+  name: cherry
+  parent: FoodCherry
+  id: FoodCherryPotion
+  description: Juicy red cherry with a pit inside.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Amatoxin
+          Quantity: 3
+  - type: FlavorProfile
+    flavors:
+      - cherrybad
+
+- type: flavor
+  id: cherrybad
+  flavorType: Complex
+  description: flavor-complex-cherry-bad
+
+- type: entity
+  id: MedievalGrassBushWinter
+  name: high bush
+  description: Very tall and dense thickets. Perhaps someone is watching you from them
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Mini/Decor/GrassBush_winter.rsi
+    drawdepth: Mobs
+    offset: 0,0.3
+    layers:
+      - state: grass_high_bush1
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        grass_high_bush1: ""
+        grass_high_bush2: ""
+        grass_high_bush3: ""
+        grass_high_bush4: ""
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.55,-0.55,0.55,0.55"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 45
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialWoodPlank1:
+              min: 1
+              max: 3
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.36
+    sprintSpeedModifier: 0.36
+  - type: TriggerOnCollide
+    fixtureID: fix1
+  - type: EmitSoundOnTrigger
+    sound: "/Audio/_Mini/bush_collide.ogg"
+
+- type: entity
+  id: MedievalTribeAltar
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/tribe_altar.rsi
+    state: altar
+    drawdepth: Overdoors
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - MedievalTribeQuest
+    chance: 1
+    intervalSeconds: 720
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10000000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.87
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+
+- type: entity
+  id: MedievalDecorCultDogStatue
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: cultdog
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 99999
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+
+- type: entity
+  id: MedievalBannerBase
+  parent: BaseStructure
+  name: base banner
+  description: It's the concept of a banner, you shouldn't be seeing this.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner
+    noRot: true
+  - type: Transform
+    noRot: true
+    anchored: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: InteractionOutline
+  - type: Damageable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Clickable
+  - type: Physics
+    bodyType: Dynamic
+
+- type: entity
+  id: MedievalDecorCultAltar
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Misc/cult.rsi
+    state: cutlaltar2
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 99999
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: Prayable
+
+- type: construction
+  id: Mattress
+  name: Спальник
+  description: На нем можно отоспаться
+  graph: Mattress
+  startNode: start
+  targetNode: Mattress
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/furniture.rsi
+    state: mattress
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: constructionGraph
+  id: Mattress
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: Mattress
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: Cloth
+              amount: 8
+              doAfter: 4
+    - node: Mattress
+      entity: Mattress
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCloth1
+              amount: 6
+          steps:
+            - tool: Prying
+              doAfter: 500
+
+# railing recipes
+
+- type: constructionGraph
+  id: WoodRailing
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: woodrailing
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 1
+              doAfter: 2
+        - to: woodrailingCorner
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2.5
+        - to: woodrailingCornerSmall
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 1
+              doAfter: 2
+        - to: woodrailingRound
+          completed:
+            - !type:SnapToGrid { }
+          steps:
+            - material: WoodPlank
+              amount: 2
+              doAfter: 2
+
+    - node: railing
+      entity: WoodRailing
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 0.25
+
+    - node: railingCorner
+      entity: WoodRailingCorner
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 0.5
+
+    - node: railingCornerSmall
+      entity: WoodRailingCornerSmall
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 0.25
+
+    - node: railingRound
+      entity: WoodRailingRound
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 2
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 0.5
+
+# railing recipes
+
+- type: entity
+  parent: Railing
+  id: WoodRailing
+  suffix: WoodRailing
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/railing.rsi
+    state: side
+  - type: Icon
+    sprite: _Mini/Decor/railing.rsi
+    state: side
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 0
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    node: woodrailing
+
+- type: entity
+  parent: RailingCorner
+  id: WoodRailingCorner
+  suffix: WoodRailingCorner
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/railing.rsi
+    state: corner
+  - type: Icon
+    sprite: _Mini/Decor/railing.rsi
+    state: corner
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    node: woodrailingCorner
+
+- type: entity
+  parent: RailingCornerSmall
+  id: WoodRailingCornerSmall
+  suffix: WoodRailingCornerSmall
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/railing.rsi
+    state: corner_small
+  - type: Icon
+    sprite: _Mini/Decor/railing.rsi
+    state: corner_small
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 0
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    node: woodrailingCornerSmall
+
+- type: entity
+  parent: RailingRound
+  id: WoodRailingRound
+  suffix: WoodRailingRound
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/railing.rsi
+    state: round
+  - type: Icon
+    sprite: _Mini/Decor/railing.rsi
+    state: round
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 0
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    node: woodrailingRound
+
+- type: entity
+  id: MedievalDecorWoodenClock
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/woodclock.rsi
+    state: icon
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - HighImpassable
+        - BulletImpassable
+  - type: AmbientSound
+    volume: -16
+    range: 3
+    sound:
+      path: /Audio/_Mini/clock_ticktack.ogg
+
+- type: entity
+  id: MedievalDecorStoragePallet
+  parent: MedievalBannerBase
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    sprite: _Mini/Decor/medieval_decor.rsi
+    state: storage_pallet
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 2
+            max: 6
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 190
+        mask:
+        - SmallMobMask
+        layer:
+        - MachineLayer
+  - type: InteractionOutline
+
+- type: entity
+  id: MedievalDecorStoragePalletIns
+  parent: MedievalDecorStoragePallet
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+
+- type: entity
+  id: MedievalDecorShipSail
+  parent: BaseStructure
+  name: nanotrasen banner
+  description: A banner displaying the Nanotrasen logo. It looks rather cheap.
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Mini/Decor/shipsail.rsi
+    state: icon
+    drawdepth: Overdoors
+    offset: 0,3.6
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Damageable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 9000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Mini/ES_Wood_Break_8_-_SFX_Producer.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 15
+            max: 30
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: InteractionOutline
